@@ -208,7 +208,7 @@ public class SchnorrKey {
      * @param bb byte array contains the values
      * @return unsigned positive BigInteger value.
      */
-    public static BigInteger bytesToBigInteger(byte[] bb) {
+    protected static BigInteger bytesToBigInteger(byte[] bb) {
         return (bb == null || bb.length == 0) ? BigInteger.ZERO : new BigInteger(1, bb);
     }
 
@@ -216,7 +216,7 @@ public class SchnorrKey {
      * @param arrays - arrays to merge
      * @return - merged array
      */
-    public static byte[] merge(byte[]... arrays)
+    protected static byte[] merge(byte[]... arrays)
     {
         int arrCount = 0;
         int count = 0;
@@ -244,7 +244,7 @@ public class SchnorrKey {
      * @param numBytes the desired size of the resulting byte array
      * @return numBytes byte long array.
      */
-    public static byte[] bigIntegerToBytes(BigInteger b, int numBytes) {
+    protected static byte[] bigIntegerToBytes(BigInteger b, int numBytes) {
         if (b == null)
             return null;
         byte[] bytes = new byte[numBytes];
